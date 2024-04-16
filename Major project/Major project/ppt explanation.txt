@@ -1,0 +1,197 @@
+Multinomial Naive Bayes is one of the most popular 
+supervised learning classifications that is used 
+for the analysis of the text data.
+It predicts the tag of a text such as a piece of email or 
+newspaper article. 
+It calculates the probability of each tag for a given sample and 
+then gives the tag with the highest probability as output
+It does have one common principle, and that is each feature being classified 
+is not related to any other feature.
+
+Now i would like to discuss a few advantages as well as disadvantages of it
+Moving on to the advantages
+It is easy to implement as you only have to calculate probability.
+You can use this algorithm on both continuous and discrete data.
+It is simple and can be used for predicting real-time applications.
+It is highly scalable and can easily handle large datasets.
+Now Moving on to the disadvantages
+The prediction accuracy of this algorithm is lower than the other probability algorithms.
+Naive Bayes algorithm is only used for textual data 
+classification and cannot be used to predict numeric values.
+Here are few applications for the multinomial naive bayes
+Face recognition
+Weather prediction
+Medical diagnosis
+Spam detection
+Age/gender identification
+Language identification
+Sentimental analysis
+Authorship identification
+News classification
+
+TF-IDF
+It stands for term frequency inverse documnet frequency
+It is a very popular topic in Natural Language Processing
+During any text processing, cleaning the text (preprocessing) is vital.
+Further, the cleaned data needs to be converted into a numerical format
+where each word is represented by a matrix (word vectors)
+TF-IDF is a statistical measure that evaluates how 
+relevant a word is to a document in a collection of documents
+This is done by multiplying two metrics: how many times a word appears
+in a document, and the inverse document frequency of the word across a set of documents.
+Term Frequency (TF) = (Frequency of a term in the document)/
+(Total number of terms in documents)
+Inverse Document Frequency(IDF) = log( (total number of documents)/
+(number of documents with term t))
+It has many uses, most importantly in automated text analysis
+
+Trigram vectorizer
+The process of converting words into numbers are called Vectorization.
+It has the function as nltk.trigrams()
+Along with the preprocees text we make use of the tf idf then trigram vectorizer and 
+maximum entropy classifier which gives us a higher accuracy
+We opt to use a Trigram vectorizer here, which vectorizes triplets of words 
+rather than each word separately.
+In this short example sentence, the trigrams are “In this short”, “this short example”
+and “short example sentence”. where we can see there are triplets of words
+Let us say from a document we want to find out the skills required to be a
+“Data Scientist”. Here, if we consider only unigrams, then the single word cannot 
+convey the details properly. If we have a word like ‘Machine learning developer’,
+then the word extracted should be ‘Machine learning’ or ‘Machine learning developer’. 
+The words simply ‘Machine’, ‘learning’ or ‘developer’ will not give the expected result.
+That's the reason we are making use of trigram vectorizer as it does give us proper meaning.
+
+Maximum Entropy classifier
+It is also known as also known as conditional exponential classifier
+or logistic regression classifier
+The Max Entropy classifier is a probabilistic classifier
+It is based on the Principle of Maximum Entropy 
+for example
+A classifier that always categorizes texts using the same label has an entropy of zero.
+A classifier that randomly classifies texts into categories 
+(each with equal probability) has a very high entropy.
+It belongs to the class of exponential models.
+One problem with the Naive Bayes classifier is that its performance depends
+on the degree to which the features are independent. But the feature 
+used for classification are rarely independent; and often, we wish to use features 
+which are highly dependent on each other. 
+Under these circumstances, NaiveBayesClassifier tends to give poor performance. 
+One alternative is to use a maxent classifier
+Due to the minimum assumptions that the Maximum Entropy classifier makes, 
+we regularly use it when we don’t know anything about the prior distributions 
+and when it is unsafe to make any such assumptions. 
+The maximum entropy classifier can use mutually dependent features 
+to reliably classify texts.
+This classifier is based on the idea that we should "model all 
+that is known and assume nothing about that which is unknown."
+To accomplish this goal, we considers all classifiers that are "empirically consistent" 
+with a set of training data; and chooses the classifier that maximizes entropy.
+A classifier is empirically consistent with a set of training data if its estimate 
+for the frequency of each feature is equal to the actual frequency of that feature
+in the training data
+The Max Entropy classifier is a discriminative classifier commonly 
+used in Natural Language Processing, Speech and Information Retrieval problems.
+Max Entropy classifier performs very well for several Text Classification problems 
+We may use maxent classifier when it is unsafe to make any prediction or assumption
+regarding the prior ditributions
+the Max Entropy requires more time to train comparing to Naive Bayes.
+This method provides robust results.
+Our target is to use the contextual information of the document 
+(trigram characteristics within the text) .
+Categorizing it to a given class 
+(positive/neutral/negative, objective/subjective etc).
+Applications
+The Max Entropy classifier can be used to solve a large variety of textclassificationproblems
+such as 
+language detection,
+topic classification, 
+sentiment analysis 
+
+Flask
+It is a Web Server Gateway Interface (WSGI) designed to create web apps. 
+Flask is a micro web framework written in Python. 
+It is classified as a microframework because 
+it does not require particular tools or libraries. 
+Flask is used for the backend, but it makes
+use of a templating language called Jinja2 which is used to create HTML, 
+XML or other markup formats that are returned to the user via an HTTP request.
+It is passed the name of the module or package of the application. 
+Once it is created it will act as a central registry for the view functions, 
+the URL rules, template configuration and much more
+It is designed to make getting started quick and easy, with the ability 
+to scale up to complex applications.
+To install flask we need to write pip install flask in cmd
+from flask import Flask 
+app=Flask(_name_)
+
+Proposed system problems
+As we have seen that we have a good accuracy percentage that is 85% but still 
+it is not 100% accurate
+This is because we need a very large dataset so as to train our model properly
+If we want a very high accuracy we need a dataset of more than 1 million articles
+The mvery important aspect is that the number of articles real and fake news should 
+be roughly same else the machine learning model might be biased
+and gives us improper results
+
+Web application architecture
+To display the result we need a web interface where the user gives the input
+and in return it gets the output
+first we click on the button for the application to preprocees the input
+and it does feed the given input to the trained model
+Then it shows us the result whether the news article is fake or real
+As saif has discussed in the  previous slides it we need to unpickle the pickling file 
+for that we are making use of the python web server that can recieve the input over the HTTP
+and gives us the proper prediction for the article
+The simplest way is to make use of the flask framework.
+which acts as the gateway interface 
+
+System architecture
+This is the system architecture for the fake news prediction model
+firslty we are extracting the data from the internet by making use of the data scraping 
+which is done by newspaper3k library
+Then data cleaning is done
+data cleaning is the process of detecting and correcting (or removing) corrupt or inaccurate
+records from a record set, table, or database and refers to identifying incomplete,
+incorrect, inaccurate or irrelevant parts of the data and then replacing, modifying,
+or deleting the dirty or coarse data.
+ we need some feature extraction techniques to convert text into a matrix(or vector) 
+of features. Some of the most popular methods of feature extraction are : Bag-of-Words. 
+TF-IDF.
+After that we are dividing the dataset to training and test data
+The whole thing is combined into a pickle file 
+After that we run the application using app.py 
+then we classify whether the news article is real or fake
+
+Datasets
+the datasets we used in this study are freely available
+the data includes both the real as well as fake news
+which is taken from different domains
+The truthful news articles published contain true description of real world events, 
+while the fake news websites contain claims that are not aligned with facts.
+We have download one of our dataset from Kaggle and the other from the some random website
+
+Conclusion
+This detection system requires a good trained model which is having a very large dataset 
+so as to give better predictions
+The data we used is collected from different domains so as to cover most of the news
+It's main purpose is to identify the patterns in the text which differentiate fake news
+from the real one's
+Spreading of fake news never ends but the damage can be curbed by using right tool
+Machine learning techniques helped us to identify the whether the news is real or fake
+In conlcusion i would like to say that in this day and age of internet dominance identifying
+fake news is and always will be an important factor in our lives.
+ this prediction system is really needful and helpful
+In today's life as there are various platforms on internet where there is a large chance 
+of spreading news .
+Where this classification system helps to identify whether the news is real or fake.
+
+
+
+
+
+
+
+
+
+
+

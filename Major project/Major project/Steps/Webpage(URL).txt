@@ -1,0 +1,11 @@
+WEBPAGE(URL) PROJECT
+1)cd Webpage(URL)
+2)pyhton fake_news_detection.py
+3)pyhton app.py
+We are making use of the NAIVE BAYES
+CLASSIFIER
+Webpage(URL) dataset size
+6343 rows
+4 columns
+29,988KB
+29.2MB

@@ -1,0 +1,13 @@
+TEXT PROJECT
+1)cd NLP
+2)pyhton predictionModel.py
+3)flask run --port=2000
+We are making use of the MAXIMUM ENTROPY CLASSIFIER
+for the text classifier
+NLP dataset size
+Test file 2322 rows 4 columns
+10,870KB
+10.6MB
+Train file 4000 rows 4 columns
+Size 18,930KB
+18.5MB

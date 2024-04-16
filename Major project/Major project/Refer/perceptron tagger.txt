@@ -1,0 +1,17 @@
+Perceptron tagger
+Jump to navigationJump to search
+The perceptron part-of-speech tagger implements part-of-speech tagging using the averaged, structured perceptron algorithm. Some information about the implementation is available in this presentation. The implementation is based on the references in the final slide.
+
+Using the perceptron tagger
+Once the tagger has been trained, you can use it in the pipeline like this:
+
+apertium-tagger -gx lang.prob
+Getting more information
+Getting detailed information about the operation of the tagger is useful both for debugging the tagger itself as well as for designing new feature templates.
+
+Tool	Description
+apertium-tagger --tagger --debug	Traces the tagging process.
+apertium-perceptron-trace model MODEL_FILE	Output the data from MODEL_FILE including the feature bytecode/disassembly and the model weights.
+apertium-perceptron-trace path MTX_FILE UNTAGGED_CORPUS TAGGED_CORPUS	Generates features for every possible wordoid as if tagging were taking place and outputting features from TAGGED_CORPUS.
+Potential improvements
+Speed: Some quick benchmarking with this method have revealed the two biggest bottlenecks might be copying stack values, which could be ameliorated by using reference counted pointers and coarsening tags, where there might be room to reuse some of the objects/machinery. In fact copying objects when using a reference (either managed or not) is a deficiency in other places too.

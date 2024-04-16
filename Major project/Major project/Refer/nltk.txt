@@ -1,0 +1,9 @@
+(Natural Language Toolkit)NLTK: NLTK is a popular open-source package in Python. Rather than building all tools from scratch, NLTK provides all common NLP Tasks.
+Installing NLTK
+Type !pip install nltk in the Jupyter Notebook or if it doesn’t work in cmd type conda install -c conda-forge nltk. This should work in most cases.
+Install NLTK: http://pypi.python.org/pypi/nltk
+Importing NLTK Library
+
+After typing the above, we get an NLTK Downloader Application which is helpful in NLP Tasks
+
+Stopwords Corpus is already installed in my system which helps in removing redundant repeated words. Similarly, we can install other useful packages.

@@ -1,0 +1,9 @@
+Installation steps
+1)cd Webpage(URL)
+2)pip install sklearn
+3)pip instal -r requirements.txt
+4)pip install pandas
+5)Nltk.download()
+6)import nltk
+7)Nltk.download()
+8)pip install scikit-learn==0.20.1
