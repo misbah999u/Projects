@@ -7,12 +7,10 @@
 - Eight categories of questions
 
 # About Me
-Full name : Abbas Ataei
+Full name : Mohammed Misbah Uddin
 
 Learning : Python
 
-Gmail : AbbasAtaei.py@gmail.com
+Gmail : misbah997u@gmail.com
 
-Telegram : https://t.me/Abbasataei_py
 
-More : https://bioly.io/AbbasAtaei
