@@ -1,6 +1,5 @@
 ﻿# Introduction
 E-Learning, a scalable web application developed in Python (Django), was crafted with the aim of delivering an enriching user experience.
-<img src="https://github.com/misbah999u/Projects/eLearning-master/eLearning-master/blob/master/users/static_in_users/static_files/img/home-sample.png" width="720" height="400">
 
 # Installation
 If you're utilizing virtualenv, adhere to these instructions to download and execute the e-learning application within this directory:
