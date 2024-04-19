@@ -1,8 +1,5 @@
 # End-to-end Fake News Classifier
 
-### [Demo 🔗](https://fakenewsservice-ih2ql4rjjq-ew.a.run.app/)
-
-### [Blog Post 🔗](https://hatem-hassan.com/blog/fullstack-nlp-building-and-deploying-end-to-end-fake-news-classifier)
 
 ## Building UI
 
