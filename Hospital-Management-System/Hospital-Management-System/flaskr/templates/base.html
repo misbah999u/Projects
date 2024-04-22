@@ -1,0 +1,67 @@
+<!doctype html>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ABC Hospital Management System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{url_for('add_patient') }}">Creat Patient</a></li>
+          <li><a href="{{url_for('update_patient') }}">Update Patient</a></li>
+          <li><a href="{{url_for('delete_patient') }}">Delete Patient</a></li>
+          <li><a href="{{url_for('view_patients') }}">View Patients</a></li>
+          <li><a href="{{url_for('pharmacist.view_patient') }}">Search Patient</a></li>
+          <li><a href="{{url_for('generate_bill') }}">Patient Billing Info</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pharmacy
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{url_for('pharmacist.add_medicine') }}">Add Medicine</a></li>
+          <li><a href="{{url_for('pharmacist.patient_info') }}">Issue Medicine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Diagnostics
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{url_for('diagnostics.add_diagnostics') }}">Add Diagnostics Test</a></li>
+          <li><a href="{{url_for('diagnostics.patient_info') }}">Assign Diagnostics</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if g.user %}
+      <li>{{ g.user['username'] }}</li>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+      {% else %}
+        <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav> 
+
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

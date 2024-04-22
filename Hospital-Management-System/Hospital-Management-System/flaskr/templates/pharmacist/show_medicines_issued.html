@@ -1,0 +1,43 @@
+<!doctype html>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    
+{% if medicines %}
+	<div id="add"></div>
+	<table class="table table-hover" id="med-table">
+    <thead>
+      <tr>
+        <th>Medicine Name</th>
+        <th>Quantity</th>
+        
+        <th>Medicine Rate</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for medicine in medicines %}
+      <tr>
+        <td>{{ medicine.medicine_name }}</td>
+        
+        <td>{{ medicine.quantity_issued }}</td>
+        
+        <td>{{ medicine.rate }}</td>
+        <td class="amount">{{ medicine.quantity_issued * medicine.rate}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+	</table>
+</div>
+{% endif %}
+</div>
