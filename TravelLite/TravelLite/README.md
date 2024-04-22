@@ -3,19 +3,17 @@ A travel agency Django app using [Materialize CSS framework]
 
 The database was MySQL.
 
-## Screenshots of the Django application
+Steps to run this project
+pip install django
+django-admin startproject travel_agency
+cd travel_agency
+python manage.py startapp travel
+Define the database schema in travel/models.py
+python manage.py migrate
+Register models in travel/admin.py
+Define the URLs in travel/urls.py
+Define the views in travel/views.py
+Create the HTML templates in travel/templates
+python manage.py runserver
 
-<p float="left">
-<img src="https://github.com/anthonyc1/TravelLite/blob/master/screenshots/login.png" width="400px">
-<img src="https://github.com/anthonyc1/TravelLite/blob/master/screenshots/explore.png" width="400px">
-</p>
 
-<p float="left">
-<img src="https://github.com/anthonyc1/TravelLite/blob/master/screenshots/flights.png" width="400px">
-<img src="https://github.com/anthonyc1/TravelLite/blob/master/screenshots/flights_data.png" width="400px">
-</p>
-
-<p float="left">
-<img src="https://github.com/anthonyc1/TravelLite/blob/master/screenshots/booking.png" width="400px">
-<img src="https://github.com/anthonyc1/TravelLite/blob/master/screenshots/review.png" width="400px">
-</p>
