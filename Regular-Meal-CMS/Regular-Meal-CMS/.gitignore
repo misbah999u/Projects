@@ -1,0 +1,11 @@
+/virtualenv/
+/.idea/
+db.sqlite3
+/menu/migrations/
+/subscription/migrations/
+/delivery/migrations/
+/client/migrations/
+/venv/
+.coverage
+/files/
+/ENV/
