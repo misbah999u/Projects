@@ -1,0 +1,8 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'recruit/css/bootstrap.min.css' %}" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<form action="" method="POST">
+    {% csrf_token %} {{form.as_ul}}
+    {{mem_form.as_ul}}  
+    <button>Submit</button>
+</form>
