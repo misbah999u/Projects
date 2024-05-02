@@ -26,7 +26,10 @@ urlpatterns = [
     path('api/auth/', include('djoser.urls.jwt')),
     path('api/', include(menu.urls)),
     path('api/', include(delivery.urls)),
+    
+
 ]
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += i18n_patterns(path('admin/', admin.site.urls), path('baton/', include('baton.urls')))

@@ -19,7 +19,7 @@ python manage.py makemigrations menu
 python manage.py makemigrations delivery
 python manage.py makemigrations client
 python manage.py makemigrations subscription
-python manage.py makemigrations
+python manage.py makemigrations authtoken
 ```
 5. Apply database migrations:
 ```
