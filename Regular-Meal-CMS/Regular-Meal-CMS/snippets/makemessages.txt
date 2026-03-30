@@ -1,2 +1,0 @@
-Создание сообщений для перевода на русский язык
-python manage.py makemessages -l ru --ignore virtualenv

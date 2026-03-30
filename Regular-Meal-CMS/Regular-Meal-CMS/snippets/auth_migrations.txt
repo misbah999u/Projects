@@ -1,3 +1,0 @@
-Чтобы применить свою модель пользователя, необходимо удалить эти миграции:
-virtualenv/Lib/site-packages/django/contrib/auth/migrations
-Нужно оставить только __initial__

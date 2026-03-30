@@ -1,4 +1,0 @@
-Запуск Coverage.py:
-coverage run --source='.' manage.py test menu
-Генерация отчёта про покрытие кода тестами:
-coverage report --omit 'virtualenv/*,venv/*'
